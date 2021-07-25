@@ -77,7 +77,7 @@ local function plugins(use)
     "b3nj5m1n/kommentary",
     opt = true,
     wants = "nvim-ts-context-commentstring",
-    keys = { "gc", "gcc" },
+    keys = { "gc", "gcc", "<Space>/" },
     config = function()
       require "config.comments"
     end,

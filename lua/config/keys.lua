@@ -60,7 +60,7 @@ util.vnoremap(">", ">gv")
 
 -- makes * and # work on visual mode too.
 vim.api.nvim_exec(
-[[
+  [[
 function! g:VSetSearch(cmdtype)
 let temp = @s
 norm! gv"sy
@@ -71,7 +71,7 @@ endfunction
 xnoremap * :<C-u>call g:VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call g:VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 ]],
-false
+  false
 )
 
 local leader = {
@@ -244,7 +244,7 @@ local leader = {
       "Line Numbers",
     },
   },
-["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
+  ["/"] = { "<Plug>kommentary_line_default<CR>", "Comment" },
   ["<tab>"] = {
     name = "workspace",
     ["<tab>"] = { "<cmd>tabnew<CR>", "New Tab" },
