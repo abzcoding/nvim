@@ -32,7 +32,7 @@ ts_configs.setup {
     "vue",
     "yaml",
     "json",
-    "markdown",
+    -- "markdown",
   },
   highlight = { enable = true, use_languagetree = true },
   indent = { enable = false },
