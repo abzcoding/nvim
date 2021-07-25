@@ -148,8 +148,12 @@ local function plugins(use)
     end,
   }
   use {
-    "npxbr/gruvbox.nvim",
-    requires = "rktjmp/lush.nvim",
+    "glepnir/zephyr-nvim",
+    config = function()
+      vim.cmd [[
+      colorscheme zephyr
+      ]]
+    end,
     cond = function()
       local _time = os.date "*t"
       return (_time.hour >= 20 and _time.hour <= 24)
