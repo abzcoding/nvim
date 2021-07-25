@@ -244,7 +244,7 @@ local leader = {
       "Line Numbers",
     },
   },
-  ["/"] = { "<Plug>kommentary_line_default<CR>", "Comment" },
+  -- ["/"] = { "<Plug>kommentary_line_default<CR>", "Comment" },
   ["<tab>"] = {
     name = "workspace",
     ["<tab>"] = { "<cmd>tabnew<CR>", "New Tab" },
