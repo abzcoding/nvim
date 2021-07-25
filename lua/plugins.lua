@@ -128,6 +128,32 @@ local function plugins(use)
     config = function()
       require "config.theme"
     end,
+    cond = function()
+      local _time = os.date "*t"
+      return (_time.hour >= 0 and _time.hour < 16)
+    end,
+  }
+  use {
+    "NTBBloodbath/doom-one.nvim",
+    config = function()
+      vim.g.doom_one_italic_comments = true
+      vim.cmd [[
+      colorscheme doom-one
+      ]]
+      -- vim.g.doom_one_terminal_colors = true
+    end,
+    cond = function()
+      local _time = os.date "*t"
+      return (_time.hour >= 16 and _time.hour < 20)
+    end,
+  }
+  use {
+    "npxbr/gruvbox.nvim",
+    requires = "rktjmp/lush.nvim",
+    cond = function()
+      local _time = os.date "*t"
+      return (_time.hour >= 20 and _time.hour <= 24)
+    end,
   }
 
   -- Theme: icons
@@ -221,7 +247,7 @@ local function plugins(use)
   -- Terminal
   use {
     "akinsho/nvim-toggleterm.lua",
-event = "BufWinEnter",
+    event = "BufWinEnter",
     config = function()
       require "config.terminal"
     end,
