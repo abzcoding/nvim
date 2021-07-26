@@ -214,11 +214,7 @@ local leader = {
     p = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
     g = { "<cmd>Glow<cr>", "Markdown Glow" },
   },
-  p = {
-    name = "+project",
-    p = "Open Project",
-    b = { ":Telescope file_browser cwd=~/projects<CR>", "Browse ~/projects" },
-  },
+  ["p"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" },
   t = {
     name = "toggle",
     f = {
