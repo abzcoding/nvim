@@ -75,7 +75,7 @@ local servers = {
   -- rnix = {},
   jsonls = { cmd = { "vscode-json-languageserver", "--stdio" } },
   html = { cmd = { "html-languageserver", "--stdio" } },
-  clangd = { cmd = {DATA_PATH .. "/lspinstall/cpp/clangd/bin/clangd"}, filetypes = {"c","cpp","objc"}},
+  clangd = { cmd = { DATA_PATH .. "/lspinstall/cpp/clangd/bin/clangd" }, filetypes = { "c", "cpp", "objc" } },
   -- intelephense = {},
   ["null-ls"] = {},
   sumneko_lua = {
@@ -104,11 +104,11 @@ local servers = {
           preloadFileSize = 1000,
         },
       },
-    }
+    },
   },
   -- efm = require("config.lsp.efm").config,
   vimls = {},
-  gopls = {cmd = {DATA_PATH .. "/lspinstall/go/gopls"}}
+  gopls = { cmd = { DATA_PATH .. "/lspinstall/go/gopls" } },
   -- tailwindcss = {},
 }
 
@@ -117,7 +117,23 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = { "documentation", "detail", "additionalTextEdits" },
 }
-
+capabilities.textDocument.codeAction = {
+  dynamicRegistration = false,
+  codeActionLiteralSupport = {
+    codeActionKind = {
+      valueSet = {
+        "",
+        "quickfix",
+        "refactor",
+        "refactor.extract",
+        "refactor.inline",
+        "refactor.rewrite",
+        "source",
+        "source.organizeImports",
+      },
+    },
+  },
+}
 function lsp_config.preview_location(location, context, before_context)
   -- location may be LocationLink or Location (more useful for the former)
   context = context or 15
