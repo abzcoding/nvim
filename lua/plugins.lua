@@ -127,6 +127,7 @@ local function plugins(use)
     -- event = "VimEnter",
     config = function()
       require "config.theme"
+      require("tokyonight").colorscheme()
     end,
     cond = function()
       local _time = os.date "*t"
