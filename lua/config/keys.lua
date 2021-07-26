@@ -94,6 +94,7 @@ local leader = {
     ["s"] = { "<C-W>s", "split-window-below" },
     ["v"] = { "<C-W>v", "split-window-right" },
   },
+  ["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
   c = { v = { "<cmd>Vista!!<CR>", "Vista" }, o = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" } },
   b = {
     name = "+buffer",
@@ -120,7 +121,7 @@ local leader = {
     d = { "<cmd>DiffviewOpen<cr>", "DiffView" },
     h = { name = "+hunk" },
   },
-  ["h"] = {
+  ["H"] = {
     name = "+help",
     t = { "<cmd>:Telescope builtin<cr>", "Telescope" },
     c = { "<cmd>:Telescope commands<cr>", "Commands" },

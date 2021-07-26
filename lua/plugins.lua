@@ -127,6 +127,10 @@ local function plugins(use)
     -- event = "VimEnter",
     config = function()
       require "config.theme"
+      local _time = os.date "*t"
+      if _time.hour < 9 then
+        vim.g.tokyonight_style = "night"
+      end
       require("tokyonight").colorscheme()
     end,
     cond = function()
