@@ -75,7 +75,16 @@ local servers = {
   -- rnix = {},
   jsonls = { cmd = { "vscode-json-languageserver", "--stdio" } },
   html = { cmd = { "html-languageserver", "--stdio" } },
-  clangd = { cmd = { DATA_PATH .. "/lspinstall/cpp/clangd/bin/clangd" }, filetypes = { "c", "cpp", "objc" } },
+  clangd = {
+    cmd = {
+      "clangd-12",
+      "--background-index",
+      "--header-insertion=never",
+      "--cross-file-rename",
+      "--clang-tidy",
+      "--clang-tidy-checks=-*,llvm-*,clang-analyzer-*",
+    },
+  },
   -- intelephense = {},
   ["null-ls"] = {},
   sumneko_lua = {

@@ -530,6 +530,17 @@ local function plugins(use)
     end,
     ft = { "rust", "rs" },
   }
+
+  use {
+    "michaelb/sniprun",
+    run = "bash ./install.sh",
+    config = function()
+      vim.api.nvim_set_keymap("v", "R", "<Plug>SnipRun", { silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>r", "<Plug>SnipRunOperator", { silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>R", "<Plug>SnipRun", { silent = true })
+    end,
+    ft = { "c", "cpp", "objc", "python" },
+  }
 end
 
 return packer.setup(config, plugins)
