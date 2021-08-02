@@ -133,37 +133,37 @@ local function plugins(use)
       end
       require("tokyonight").colorscheme()
     end,
-    cond = function()
-      local _time = os.date "*t"
-      return (_time.hour >= 0 and _time.hour < 16)
-    end,
+    -- cond = function()
+    --   local _time = os.date "*t"
+    --   return (_time.hour >= 0 and _time.hour < 16)
+    -- end,
   }
-  use {
-    "NTBBloodbath/doom-one.nvim",
-    config = function()
-      vim.g.doom_one_italic_comments = true
-      vim.cmd [[
-      colorscheme doom-one
-      ]]
-      -- vim.g.doom_one_terminal_colors = true
-    end,
-    cond = function()
-      local _time = os.date "*t"
-      return (_time.hour >= 16 and _time.hour < 20)
-    end,
-  }
-  use {
-    "glepnir/zephyr-nvim",
-    config = function()
-      vim.cmd [[
-      colorscheme zephyr
-      ]]
-    end,
-    cond = function()
-      local _time = os.date "*t"
-      return (_time.hour >= 20 and _time.hour <= 24)
-    end,
-  }
+  -- use {
+  --   "NTBBloodbath/doom-one.nvim",
+  --   config = function()
+  --     vim.g.doom_one_italic_comments = true
+  --     vim.cmd [[
+  --     colorscheme doom-one
+  --     ]]
+  --     -- vim.g.doom_one_terminal_colors = true
+  --   end,
+  --   cond = function()
+  --     local _time = os.date "*t"
+  --     return (_time.hour >= 16 and _time.hour < 20)
+  --   end,
+  -- }
+  -- use {
+  --   "glepnir/zephyr-nvim",
+  --   config = function()
+  --     vim.cmd [[
+  --     colorscheme zephyr
+  --     ]]
+  --   end,
+  --   cond = function()
+  --     local _time = os.date "*t"
+  --     return (_time.hour >= 20 and _time.hour <= 24)
+  --   end,
+  -- }
 
   -- Theme: icons
   use {
@@ -514,7 +514,8 @@ local function plugins(use)
         -- these override the defaults set by rust-tools.nvim
         -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
         server = {
-          cmd = { DATA_PATH .. "/lspinstall/rust/rust-analyzer" },
+
+          cmd = { vim.fn.stdpath "data" .. "/lspinstall/rust/rust-analyzer" },
         }, -- rust-analyser options
       }
       require("rust-tools").setup(opts)
