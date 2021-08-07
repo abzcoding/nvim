@@ -77,7 +77,7 @@ local servers = {
   html = { cmd = { "html-languageserver", "--stdio" } },
   clangd = {
     cmd = {
-      "clangd-12",
+      "clangd",
       "--background-index",
       "--header-insertion=never",
       "--cross-file-rename",
