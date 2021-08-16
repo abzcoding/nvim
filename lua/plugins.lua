@@ -212,7 +212,7 @@ local function plugins(use)
     end,
     cmd = { "Telescope" },
     module = "telescope",
-    keys = { "<leader><space>", "<leader>fz", "<leader>pp" },
+    keys = { "<leader><space>", "<leader>f", "<leader>p" },
     wants = {
       "plenary.nvim",
       "popup.nvim",
