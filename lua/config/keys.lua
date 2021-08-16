@@ -279,7 +279,7 @@ xnoremap # :<C-u>call g:VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
       l = { "<cmd>lopen<cr>", "Open Location List" },
       q = { "<cmd>copen<cr>", "Open Quickfix List" },
     },
-    Z = { [[<cmd>lua require("zen-mode").reset()<cr>]], "Zen Mode" },
+    -- Z = { [[<cmd>lua require("zen-mode").reset()<cr>]], "Zen Mode" },
     z = { [[<cmd>ZenMode<cr>]], "Zen Mode" },
     T = { [[<Plug>PlenaryTestFile]], "Plenary Test" },
     D = {
