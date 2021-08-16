@@ -357,10 +357,9 @@ local function plugins(use)
 
   use {
     "ggandor/lightspeed.nvim",
-    event = "BufReadPost",
-    config = function()
-      require "config.lightspeed"
-    end,
+    -- event = "BufReadPost",
+    opt = true,
+    config = require "config.lightspeed",
   }
 
   use {
@@ -404,18 +403,16 @@ local function plugins(use)
   use {
     "folke/todo-comments.nvim",
     cmd = { "TodoTrouble", "TodoTelescope" },
-    event = "BufReadPost",
-    config = function()
-      require "config.todo"
-    end,
+    -- event = "BufReadPost",
+    opt = true,
+    config = require "config.todo",
   }
 
   use {
     "folke/which-key.nvim",
-    event = "VimEnter",
-    config = function()
-      require "config.keys"
-    end,
+    opt = true,
+    -- event = "VimEnter",
+    config = require "config.keys",
   }
 
   use {
@@ -441,7 +438,8 @@ local function plugins(use)
   -- use "nanotee/luv-vimdocs"
   use {
     "andymass/vim-matchup",
-    event = "CursorMoved",
+    -- event = "CursorMoved",
+    opt = true,
   }
   use { "camspiers/snap", rocks = { "fzy" }, module = "snap" }
   -- use "kmonad/kmonad-vim"
