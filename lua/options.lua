@@ -51,16 +51,16 @@ vim.opt.wrap = true -- Disable line wrap
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 vim.o.shortmess = "IToOlxfitn"
 
--- don't load the plugins below
-vim.g.loaded_gzip = 1
-vim.g.loaded_tar = 1
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_zipPlugin = 1
-vim.g.loaded_2html_plugin = 1
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_matchit = 1
-vim.g.loaded_matchparen = 1
+-- -- don't load the plugins below
+-- vim.g.loaded_gzip = 1
+-- vim.g.loaded_tar = 1
+-- vim.g.loaded_tarPlugin = 1
+-- vim.g.loaded_zipPlugin = 1
+-- vim.g.loaded_2html_plugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_matchit = 1
+-- vim.g.loaded_matchparen = 1
 
 -- Use proper syntax highlighting in code blocks
 local fences = {

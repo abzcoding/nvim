@@ -289,18 +289,20 @@ local function plugins(use)
       require "config.gitsigns"
     end,
   }
-  -- use {
-  --   "kdheepak/lazygit.nvim",
-  --   cmd = "LazyGit",
-  --   config = function() vim.g.lazygit_floating_window_use_plenary = 0 end
-  -- }
   use {
-    "TimUntersberger/neogit",
-    cmd = "Neogit",
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit",
     config = function()
-      require "config.neogit"
+      vim.g.lazygit_floating_window_use_plenary = 0
     end,
   }
+  -- use {
+  --   "TimUntersberger/neogit",
+  --   cmd = "Neogit",
+  --   config = function()
+  --     require "config.neogit"
+  --   end,
+  -- }
 
   -- Statusline
   use {
@@ -436,13 +438,13 @@ local function plugins(use)
   -- use({ "wellle/targets.vim" })
 
   -- use("DanilaMihailov/vim-tips-wiki")
-  use "nanotee/luv-vimdocs"
+  -- use "nanotee/luv-vimdocs"
   use {
     "andymass/vim-matchup",
     event = "CursorMoved",
   }
   use { "camspiers/snap", rocks = { "fzy" }, module = "snap" }
-  use "kmonad/kmonad-vim"
+  -- use "kmonad/kmonad-vim"
   use {
     "simrat39/rust-tools.nvim",
     config = function()
