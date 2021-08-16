@@ -235,13 +235,13 @@ local function plugins(use)
   }
 
   -- Indent Guides and rainbow brackets
+
   use {
     "lukas-reineke/indent-blankline.nvim",
-    opt = true,
-    event = "BufReadPre",
-    config = function()
-      require "config.blankline"
+    setup = function()
+      require("config.blankline").setup()
     end,
+    event = "BufRead",
   }
 
   -- Tabs
