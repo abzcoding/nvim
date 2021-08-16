@@ -32,10 +32,16 @@ vim.defer_fn(function()
   ]]
   vim.defer_fn(function()
     vim.cmd [[
+      PackerLoad plenary.nvim
+      PackerLoad popup.nvim
       PackerLoad which-key.nvim
+      PackerLoad nvim-lspconfig
+      PackerLoad vim-matchup
       PackerLoad todo-comments.nvim
       PackerLoad lightspeed.nvim
-      PackerLoad vim-matchup
+      PackerLoad nvim-colorizer.lua
+      PackerLoad trouble.nvim
+      PackerLoad nvim-toggleterm.lua
       silent! bufdo e
     ]]
   end, 20)

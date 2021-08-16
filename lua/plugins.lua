@@ -29,7 +29,7 @@ local function plugins(use)
   use {
     "neovim/nvim-lspconfig",
     opt = true,
-    event = "BufReadPre",
+    -- event = "BufReadPre",
     wants = { "nvim-lsp-ts-utils", "null-ls.nvim", "lua-dev.nvim" },
     config = function()
       require "config.lsp"
@@ -184,8 +184,8 @@ local function plugins(use)
       require("terminal").setup()
     end,
   }
-  use { "nvim-lua/plenary.nvim", module = "plenary" }
-  use { "nvim-lua/popup.nvim", module = "popup" }
+  use { "nvim-lua/plenary.nvim", opt = true, module = "plenary" }
+  use { "nvim-lua/popup.nvim", opt = true, module = "popup" }
 
   use {
     "windwp/nvim-spectre",
@@ -237,6 +237,7 @@ local function plugins(use)
   -- Indent Guides and rainbow brackets
   use {
     "lukas-reineke/indent-blankline.nvim",
+    opt = true,
     event = "BufReadPre",
     config = function()
       require "config.blankline"
@@ -256,7 +257,8 @@ local function plugins(use)
   -- Terminal
   use {
     "akinsho/nvim-toggleterm.lua",
-    event = "BufWinEnter",
+    -- event = "BufWinEnter",
+    opt = true,
     config = function()
       require "config.terminal"
     end,
@@ -314,7 +316,8 @@ local function plugins(use)
 
   use {
     "norcalli/nvim-colorizer.lua",
-    event = "BufReadPre",
+    -- event = "BufReadPre",
+    opt = true,
     config = function()
       require "config.colorizer"
     end,
@@ -364,7 +367,8 @@ local function plugins(use)
 
   use {
     "folke/trouble.nvim",
-    event = "BufReadPre",
+    -- event = "BufReadPre",
+    opt = true,
     wants = "nvim-web-devicons",
     cmd = { "TroubleToggle", "Trouble" },
     config = function()

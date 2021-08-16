@@ -1,9 +1,8 @@
-local wk = require "which-key"
-local util = require "util"
-
 local M = {}
 
 function M.setup(client, bufnr)
+  local wk = require "which-key"
+  local util = require "util"
   -- Mappings.
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
