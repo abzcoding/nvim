@@ -11,7 +11,8 @@ if vim.lsp.setup then
       display = {
         underline = true,
         update_in_insert = false,
-        virtual_text = { spacing = 4, prefix = "●" },
+        -- virtual_text = { spacing = 4, prefix = "●" },
+        virtual_text = false,
         severity_sort = true,
       },
     },
