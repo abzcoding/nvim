@@ -7,7 +7,7 @@ function M.setup()
     debounce = 150,
     save_after_format = false,
     sources = {
-      nls.builtins.formatting.prettierd,
+      nls.builtins.formatting.prettier,
       nls.builtins.formatting.stylua,
       nls.builtins.formatting.black.with { extra_args = { "--fast" } },
       nls.builtins.formatting.isort.with { extra_args = { "--profile", "black" } },
