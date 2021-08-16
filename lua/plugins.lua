@@ -175,7 +175,7 @@ local function plugins(use)
   }
 
   -- Dashboard
-  use { "glepnir/dashboard-nvim", config = [[require('config.dashboard')]] }
+  -- use { "glepnir/dashboard-nvim", config = [[require('config.dashboard')]] }
 
   use {
     "norcalli/nvim-terminal.lua",
