@@ -82,13 +82,14 @@ function M.setup(client, bufnr)
     keymap_visual.c.f = { "<cmd>lua vim.lsp.buf.range_formatting()<CR>", "Format Range" }
   end
 
-  local keys = {
+  local normal_keys = {
     ["gl"] = {
       "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>",
       "Show line diagnostics",
     },
   }
-  wk.register(keys, { mode = "n", buffer = bufnr })
+  vim.api.nvim_set_keymap("i", "<c-s>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { noremap = true, silent = true })
+  wk.register(normal_keys, { mode = "n", buffer = bufnr })
   wk.register(keymap, { buffer = bufnr, prefix = "<leader>" })
   wk.register(keymap_visual, { buffer = bufnr, prefix = "<leader>", mode = "v" })
   wk.register(keymap_goto, { buffer = bufnr, prefix = "g" })
