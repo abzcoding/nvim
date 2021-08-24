@@ -66,7 +66,7 @@ local function plugins(use)
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-nvim-lsp" },
-      { "saadparwaiz1/cmp_luasnip" },
+      { "abzcoding/cmp_luasnip" },
     },
   } -- Autocompletion plugin
 
