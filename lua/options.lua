@@ -111,5 +111,11 @@ cmd [[autocmd BufRead,BufNewFile *.fish setfiletype fish]]
 cmd [[autocmd BufRead,BufNewFile *.nix setfiletype nix]]
 
 -- windows to close with "q"
-vim.cmd [[autocmd FileType help,startuptime,qf,lspinfo nnoremap <buffer><silent> q :close<CR>]]
-vim.cmd [[autocmd FileType man nnoremap <buffer><silent> q :quit<CR>]]
+cmd [[autocmd FileType help,startuptime,qf,lspinfo nnoremap <buffer><silent> q :close<CR>]]
+cmd [[autocmd FileType man nnoremap <buffer><silent> q :quit<CR>]]
+cmd [[
+autocmd FileType lua lua require'cmp'.setup.buffer {sources = {{ name = "nvim_lsp" }, { name = 'buffer' }, { name = 'nvim_lua' }, { name = "luasnip" }}}
+]]
+cmd [[
+autocmd FileType latex lua require'cmp'.setup.buffer {sources = {{ name = "nvim_lsp" }, { name = 'buffer' }, { name = 'latex_symbols' }, { name = "luasnip" }}}
+]]

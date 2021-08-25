@@ -69,8 +69,19 @@ local function plugins(use)
 
   use { "hrsh7th/cmp-path", after = "nvim-cmp" }
   use { "hrsh7th/cmp-buffer", after = "nvim-cmp" }
+  use { "hrsh7th/cmp-calc", after = "nvim-cmp" }
+  use { "hrsh7th/cmp-nvim-lua", after = "nvim-cmp", ft = "lua" }
+  use { "hrsh7th/cmp-emoji", after = "nvim-cmp" }
   use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" }
   use { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" }
+  use {
+    "kdheepak/cmp-latex-symbols",
+    after = "nvim-cmp",
+    ft = "latex",
+    requires = {
+      { "kdheepak/cmp-latex-symbols" },
+    },
+  }
 
   use {
     "simrat39/symbols-outline.nvim",

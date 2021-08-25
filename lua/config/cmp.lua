@@ -54,7 +54,7 @@ M.config = function()
       ["<C-f>"] = cmp.mapping.scroll_docs(4),
       ["<C-Space>"] = cmp.mapping.complete(),
       ["<C-e>"] = cmp.mapping.close(),
-      ["<ESC>"] = cmp.mapping.close(),
+      -- ["<ESC>"] = cmp.mapping.close(),
       ["<CR>"] = cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Replace,
         select = true,
@@ -102,6 +102,8 @@ M.config = function()
           end,
         },
       },
+      { name = "calc" },
+      { name = "emoji" },
     },
   }
 end
