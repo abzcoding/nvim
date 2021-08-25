@@ -44,6 +44,7 @@ local function plugins(use)
 
   use {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     config = function()
       require("config.cmp").config()
     end,
@@ -63,12 +64,13 @@ local function plugins(use)
           require "config.autopairs"
         end,
       },
-      { "hrsh7th/cmp-path" },
-      { "hrsh7th/cmp-buffer" },
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "abzcoding/cmp_luasnip" },
     },
   } -- Autocompletion plugin
+
+  use { "hrsh7th/cmp-path", after = "nvim-cmp" }
+  use { "hrsh7th/cmp-buffer", after = "nvim-cmp" }
+  use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" }
+  use { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" }
 
   use {
     "simrat39/symbols-outline.nvim",
