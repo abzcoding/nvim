@@ -104,6 +104,7 @@ M.config = function()
       },
       { name = "calc" },
       { name = "emoji" },
+      { name = "nvim_lua" },
     },
   }
 end
