@@ -19,6 +19,9 @@ M.config = function()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
   cmp.setup {
+    completion = {
+      completeopt = "menu,menuone,noinsert",
+    },
     formatting = {
       format = function(entry, vim_item)
         local icons = require("config.lsp.kind").icons
@@ -29,6 +32,7 @@ M.config = function()
           path = "(Path)",
           calc = "(Calc)",
           vsnip = "(Snippet)",
+          luasnip = "(Snippet)",
           buffer = "(Buffer)",
         })[entry.source.name]
         vim_item.dup = ({
