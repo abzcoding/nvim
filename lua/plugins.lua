@@ -52,6 +52,7 @@ local function plugins(use)
     requires = {
       {
         "L3MON4D3/LuaSnip",
+        event = "BufReadPre",
         wants = "friendly-snippets",
         config = function()
           require "config.snippets"
@@ -60,6 +61,7 @@ local function plugins(use)
       "rafamadriz/friendly-snippets",
       {
         "windwp/nvim-autopairs",
+        event = "BufReadPre",
         config = function()
           require "config.autopairs"
         end,
@@ -324,7 +326,7 @@ local function plugins(use)
   -- Statusline
   use {
     "shadmansaleh/lualine.nvim",
-    event = "VimEnter",
+    event = "BufReadPre",
     config = [[require('config.lualine')]],
     wants = "nvim-web-devicons",
   }
