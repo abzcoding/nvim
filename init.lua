@@ -44,5 +44,5 @@ vim.defer_fn(function()
       PackerLoad nvim-toggleterm.lua
       silent! bufdo e
     ]]
-  end, 20)
+  end, 10)
 end, 0)
