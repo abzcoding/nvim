@@ -92,8 +92,6 @@ M.config = function()
     },
     sources = {
       { name = "nvim_lsp" },
-      { name = "luasnip" },
-      { name = "path" },
       {
         name = "buffer",
         opts = {
@@ -106,6 +104,8 @@ M.config = function()
           end,
         },
       },
+      { name = "luasnip" },
+      { name = "path" },
       { name = "calc" },
       { name = "emoji" },
       -- { name = "nvim_lua" },
