@@ -20,7 +20,6 @@ require "util"
 require "options"
 
 vim.defer_fn(function()
-  require "impatient"
   require "plugins"
   vim.opt.shadafile = ""
   vim.cmd [[
