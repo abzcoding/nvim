@@ -20,6 +20,7 @@ require "util"
 require "options"
 
 vim.defer_fn(function()
+  require "impatient"
   require "plugins"
   vim.opt.shadafile = ""
   vim.cmd [[
@@ -44,5 +45,5 @@ vim.defer_fn(function()
       PackerLoad nvim-toggleterm.lua
       silent! bufdo e
     ]]
-  end, 10)
+  end, 5)
 end, 0)
