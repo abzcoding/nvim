@@ -18,6 +18,7 @@ vim.g.loaded_matchparen = 1
 
 require "util"
 require "options"
+require "impatient"
 
 vim.defer_fn(function()
   require "plugins"
