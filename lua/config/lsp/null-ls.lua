@@ -20,7 +20,6 @@ function M.setup()
       nls.builtins.diagnostics.selene,
       nls.builtins.diagnostics.vint,
       nls.builtins.diagnostics.chktex,
-      nls.builtins.code_actions.gitsigns,
     },
   }
 end
