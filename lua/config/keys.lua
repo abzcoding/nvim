@@ -181,7 +181,10 @@ xnoremap # :<C-u>call g:VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
     },
     l = {
       name = "LSP",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+      a = {
+        '<cmd>lua require("telescope.builtin").lsp_code_actions(require("telescope.themes").get_dropdown({winblend = 10,border = true,previewer = false,shorten_path = false}))<cr>',
+        "Code Action",
+      },
       d = {
         "<cmd>Telescope lsp_document_diagnostics<cr>",
         "Document Diagnostics",
