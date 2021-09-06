@@ -174,10 +174,9 @@ function lsp_config.preview_location(location, context, before_context)
   return vim.lsp.util.open_floating_preview(contents, filetype, { border = "single" })
 end
 
-function lsp_config.preview_location_callback(_, method, result)
+function lsp_config.preview_location_callback(_, result)
   local context = 15
   if result == nil or vim.tbl_isempty(result) then
-    print("No location found: " .. method)
     return nil
   end
   if vim.tbl_islist(result) then

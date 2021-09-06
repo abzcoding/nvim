@@ -7,7 +7,7 @@ function M.setup(client, buffer)
     client.request_orig = client.request
     client.request = function(method, params, handler, bufnr)
       if method == "textDocument/completion" then
-        local intercept = function(err, _method, result, client_id, _bufnr)
+        local intercept = function(err, result, ctx)
           local response = result or {}
           local items = response.items or response
           for _, item in ipairs(items) do
@@ -19,7 +19,7 @@ function M.setup(client, buffer)
               item.insertTextFormat = 2
             end
           end
-          return handler(err, method, result, client_id, bufnr)
+          return handler(err, result, { method = method, client_id = ctx.client_id, bufnr = bufnr })
         end
         return client.request_orig(method, params, intercept, bufnr)
       end
