@@ -65,7 +65,6 @@ local lua_cmd = {
   "-E",
   DATA_PATH .. "/lspinstall/lua/main.lua",
 }
--- lua_cmd = { "lua-language-server" }
 
 local servers = {
   pyright = {},
@@ -74,6 +73,7 @@ local servers = {
   tsserver = {},
   cssls = { cmd = { "css-languageserver", "--stdio" } },
   -- rnix = {},
+  texlab = require("config.tex").config(),
   jsonls = { cmd = { "vscode-json-languageserver", "--stdio" } },
   html = { cmd = { "html-languageserver", "--stdio" } },
   clangd = {

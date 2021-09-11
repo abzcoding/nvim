@@ -219,7 +219,18 @@ xnoremap # :<C-u>call g:VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
       g = { "<cmd>Glow<cr>", "Markdown Glow" },
     },
     ["p"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" },
-    t = {
+    ["t"] = {
+      name = "+Latex",
+      c = { "<cmd>VimtexCompile<cr>", "Toggle Compilation Mode" },
+      f = { "<cmd>call vimtex#fzf#run()<cr>", "Fzf Find" },
+      i = { "<cmd>VimtexInfo<cr>", "Project Information" },
+      s = { "<cmd>VimtexStop<cr>", "Stop Project Compilation" },
+      t = { "<cmd>VimtexTocToggle<cr>", "Toggle Table Of Content" },
+      v = { "<cmd>VimtexView<cr>", "View PDF" },
+      b = { "<cmd>TexlabBuild<cr>", "Build with Texlab" },
+      p = { "<cmd>TexlabForward<cr>", "Search with Texlab" },
+    },
+    T = {
       name = "toggle",
       f = {
         require("config.lsp.formatting").toggle,
@@ -244,6 +255,7 @@ xnoremap # :<C-u>call g:VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
         end,
         "Line Numbers",
       },
+      t = { [[<Plug>PlenaryTestFile]], "Plenary Test" },
     },
     -- ["/"] = { "<Plug>kommentary_line_default<CR>", "Comment" },
     ["<tab>"] = {
@@ -284,7 +296,6 @@ xnoremap # :<C-u>call g:VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
     },
     -- Z = { [[<cmd>lua require("zen-mode").reset()<cr>]], "Zen Mode" },
     z = { [[<cmd>ZenMode<cr>]], "Zen Mode" },
-    T = { [[<Plug>PlenaryTestFile]], "Plenary Test" },
     D = {
       function()
         util.docs()

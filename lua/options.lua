@@ -51,7 +51,6 @@ vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 vim.opt.wrap = true -- Disable line wrap
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 vim.o.shortmess = "IToOlxfitn"
-
 -- -- don't load the plugins below
 -- vim.g.loaded_gzip = 1
 -- vim.g.loaded_tar = 1
@@ -87,6 +86,19 @@ cmd [[autocmd BufRead,BufNewFile *.nix setfiletype nix]]
 -- windows to close with "q"
 cmd [[autocmd FileType help,startuptime,qf,lspinfo nnoremap <buffer><silent> q :close<CR>]]
 cmd [[autocmd FileType man nnoremap <buffer><silent> q :quit<CR>]]
+
+vim.g.vimtex_compiler_method = "latexmk"
+vim.g.vimtex_view_method = "skim"
+vim.g.vimtex_fold_enabled = 0
+vim.g.vimtex_quickfix_ignore_filters = {}
+-- Compile on initialization, cleanup on quit
+cmd [[
+        augroup vimtex_event_1
+            au!
+            au User VimtexEventQuit     call vimtex#compiler#clean(0)
+            au User VimtexEventInitPost call vimtex#compiler#compile()
+        augroup END
+    ]]
 -- cmd [[
 -- autocmd FileType lua lua require'cmp'.setup.buffer {sources = {{ name = "nvim_lsp" }, { name = 'buffer' }, { name = 'nvim_lua' }, { name = "luasnip" }}}
 -- ]]

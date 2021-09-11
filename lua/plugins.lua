@@ -552,6 +552,10 @@ local function plugins(use)
     end,
     ft = { "rust", "rs" },
   }
+  use {
+    "lervag/vimtex",
+    ft = "tex",
+  }
 end
 
 return packer.setup(config, plugins)
