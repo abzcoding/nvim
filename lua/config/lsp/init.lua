@@ -49,6 +49,9 @@ else
 end
 
 local function on_attach(client, bufnr)
+  vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError", numhl = "" })
+  vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn", numhl = "" })
+  vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo", numhl = ""})
   require("config.lsp.formatting").setup(client, bufnr)
   require("config.lsp.keys").setup(client, bufnr)
   require("config.lsp.completion").setup(client, bufnr)
