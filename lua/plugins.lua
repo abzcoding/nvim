@@ -329,6 +329,7 @@ local function plugins(use)
     event = "BufReadPre",
     config = [[require('config.lualine')]],
     wants = "nvim-web-devicons",
+    requires = "tokyonight.nvim",
   }
 
   use {
