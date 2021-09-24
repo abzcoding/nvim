@@ -19,6 +19,10 @@ M.config = function()
   local cmp = require "cmp"
   local luasnip = require "luasnip"
   cmp.setup {
+    experimental = {
+      ghost_text = false,
+      custom_menu = true,
+    },
     completion = {
       completeopt = "menu,menuone,noinsert",
     },
@@ -52,8 +56,10 @@ M.config = function()
       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     },
     mapping = {
-      ["<C-p>"] = cmp.mapping.select_prev_item(),
-      ["<C-n>"] = cmp.mapping.select_next_item(),
+      ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+      ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+      ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+      ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
       ["<C-d>"] = cmp.mapping.scroll_docs(-4),
       ["<C-f>"] = cmp.mapping.scroll_docs(4),
       ["<C-Space>"] = cmp.mapping.complete(),
@@ -64,8 +70,8 @@ M.config = function()
         select = true,
       },
       ["<Tab>"] = cmp.mapping(function(fallback)
-        if vim.fn.pumvisible() == 1 then
-          vim.fn.feedkeys(T "<C-n>", "n")
+        if cmp.visible() == 1 then
+          cmp.select_next_item()
         elseif luasnip.expand_or_jumpable() then
           vim.fn.feedkeys(T "<Plug>luasnip-expand-or-jump", "")
         elseif check_backspace() then
@@ -78,8 +84,8 @@ M.config = function()
         "s",
       }),
       ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if vim.fn.pumvisible() == 1 then
-          vim.fn.feedkeys(T "<C-p>", "n")
+        if cmp.visible() == 1 then
+          cmp.select_prev_item()
         elseif luasnip.jumpable(-1) then
           vim.fn.feedkeys(T "<Plug>luasnip-jump-prev", "")
         else
