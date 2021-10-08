@@ -44,7 +44,6 @@ local function plugins(use)
 
   use {
     "hrsh7th/nvim-cmp",
-    branch = "custom-menu",
     event = "InsertEnter",
     config = function()
       require("config.cmp").config()
