@@ -25,6 +25,14 @@ local function plugins(use)
   -- Packer can manage itself as an optional plugin
   use { "wbthomason/packer.nvim", opt = true }
   -- use({ "folke/workspace.nvim" })
+
+  use {
+    "lewis6991/impatient.nvim",
+    opt = true,
+    config = function()
+      require "impatient"
+    end,
+  }
   -- LSP
   use {
     "neovim/nvim-lspconfig",
@@ -103,7 +111,9 @@ local function plugins(use)
 
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    after = "impatient.nvim",
+    -- run = ":TSUpdate",
+    branch = "0.5-compat",
     opt = true,
     event = "BufRead",
     requires = {
@@ -433,6 +443,7 @@ local function plugins(use)
   use {
     "folke/which-key.nvim",
     opt = true,
+    after = "treesitter.nvim",
     -- event = "VimEnter",
     config = require "config.keys",
   }

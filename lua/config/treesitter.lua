@@ -4,7 +4,11 @@ if gcc and gcc ~= vim.NIL then
   require("nvim-treesitter.install").compilers = { gcc }
 end
 
-local ts_configs = require "nvim-treesitter.configs"
+local status_ok, ts_configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+  print "cannot load treesitter configuration"
+  return
+end
 ts_configs.setup {
   ensure_installed = {
     "bash",

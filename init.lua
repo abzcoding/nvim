@@ -28,20 +28,12 @@ vim.defer_fn(function()
     syntax on
     filetype on
     filetype plugin indent on
-    PackerLoad nvim-treesitter
   ]]
   vim.defer_fn(function()
     vim.cmd [[
-      PackerLoad plenary.nvim
-      PackerLoad popup.nvim
+      PackerLoad impatient.nvim
       PackerLoad which-key.nvim
       PackerLoad nvim-lspconfig
-      PackerLoad vim-matchup
-      PackerLoad todo-comments.nvim
-      PackerLoad lightspeed.nvim
-      PackerLoad nvim-colorizer.lua
-      PackerLoad trouble.nvim
-      PackerLoad nvim-toggleterm.lua
       silent! bufdo e
     ]]
   end, 5)
