@@ -268,7 +268,8 @@ local function plugins(use)
     setup = function()
       require("config.blankline").setup()
     end,
-    event = "BufRead",
+    opt = true,
+    after = "which-key.nvim",
   }
 
   -- Tabs
@@ -284,6 +285,8 @@ local function plugins(use)
   -- Terminal
   use {
     "akinsho/nvim-toggleterm.lua",
+    keys = { "<c-t>" },
+    cmd = "ToggleTerm",
     -- event = "BufWinEnter",
     opt = true,
     config = function()
@@ -443,7 +446,7 @@ local function plugins(use)
   use {
     "folke/which-key.nvim",
     opt = true,
-    after = "treesitter.nvim",
+    after = "nvim-treesitter",
     -- event = "VimEnter",
     config = require "config.keys",
   }
