@@ -1,9 +1,3 @@
-local gcc = vim.fn.getenv "NIX_GCC"
-
-if gcc and gcc ~= vim.NIL then
-  require("nvim-treesitter.install").compilers = { gcc }
-end
-
 local status_ok, ts_configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
   print "cannot load treesitter configuration"
@@ -25,7 +19,6 @@ ts_configs.setup {
     "jsonc",
     "latex",
     "lua",
-    "nix",
     "python",
     "regex",
     "rust",

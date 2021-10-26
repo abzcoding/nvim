@@ -38,7 +38,12 @@ local function plugins(use)
     "neovim/nvim-lspconfig",
     opt = true,
     -- event = "BufReadPre",
-    wants = { "nvim-lsp-ts-utils", "null-ls.nvim", "lua-dev.nvim" },
+wants = {
+      "nvim-lsp-ts-utils",
+      "null-ls.nvim",
+      "lua-dev.nvim",
+      "nvim-lsp-installer",
+    },
     config = function()
       require "config.lsp"
     end,
@@ -47,6 +52,7 @@ local function plugins(use)
       "jose-elias-alvarez/nvim-lsp-ts-utils",
       "jose-elias-alvarez/null-ls.nvim",
       "folke/lua-dev.nvim",
+      "williamboman/nvim-lsp-installer",
     },
   }
 
@@ -338,7 +344,7 @@ local function plugins(use)
 
   -- Statusline
   use {
-    "shadmansaleh/lualine.nvim",
+    "nvim-lualine/lualine.nvim",
     event = "BufReadPre",
     config = [[require('config.lualine')]],
     wants = "nvim-web-devicons",
@@ -403,7 +409,10 @@ local function plugins(use)
     wants = "nvim-web-devicons",
     cmd = { "TroubleToggle", "Trouble" },
     config = function()
-      require("trouble").setup { auto_open = false }
+      require("trouble").setup {
+        auto_open = false,
+        use_lsp_diagnostic_signs = true, -- en
+      }
     end,
   }
 

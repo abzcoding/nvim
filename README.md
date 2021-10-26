@@ -1,4 +1,1 @@
-# Neovim Config (Unmaintained)
-
-use LunarVim instead
-
+# I Won't Say
